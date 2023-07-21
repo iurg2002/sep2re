@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+
+<VBox prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+fx:controller="view.ViewReservationViewController">
+   <children>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Reservation Info" />
+      <Text fx:id="carText" strokeType="OUTSIDE" strokeWidth="0.0" text="Car:" />
+      <Text fx:id="startDateText" strokeType="OUTSIDE" strokeWidth="0.0" text="Start Date: " />
+      <Text fx:id="endDateText" strokeType="OUTSIDE" strokeWidth="0.0" text="End Date:" />
+      <Text fx:id="statusText" strokeType="OUTSIDE" strokeWidth="0.0" text="Status:" />
+      <Button onAction="#handleClose" mnemonicParsing="false" text="Close" />
+      <Button onAction="#handleEditReservation" mnemonicParsing="false" text="Edit Reservation" />
+   </children>
+</VBox>
