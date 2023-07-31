@@ -21,6 +21,7 @@ public class ViewHandler
     private LoginViewController loginViewController;
     private RegisterViewController registerViewController;
     private EditReservationViewController editReservationViewController;
+    private ManageCarsViewController manageCarsViewController;
 
     public ViewHandler(ViewModelFactory viewModelFactory)
     {
@@ -41,6 +42,9 @@ public class ViewHandler
         {
             case "cars":
                 root = loadViewCarsView("ViewCarsView.fxml");
+                break;
+            case "managecars":
+                root = loadManageCarsView("ManageCarsView.fxml");
                 break;
             case "login":
                 root = loadLoginView("LoginView.fxml");
@@ -95,6 +99,28 @@ public class ViewHandler
             viewCarsViewController.reset();
         }
         return viewCarsViewController.getRoot();
+    }
+
+    private Region loadManageCarsView(String fxmlFile) throws SQLException, IOException
+    {
+        Region root = null;
+        if(manageCarsViewController == null)
+        {
+            try{
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource(fxmlFile));
+                root = loader.load();
+                manageCarsViewController = loader.getController();
+                manageCarsViewController.init(this, viewModelFactory.getManageCarsViewModel(), root);
+            } catch (Exception e)
+            {
+                e.printStackTrace();
+            }
+        } else
+        {
+            manageCarsViewController.reset();
+        }
+        return manageCarsViewController.getRoot();
     }
 
     private Region loadLoginView(String fxmlFile) throws SQLException, IOException

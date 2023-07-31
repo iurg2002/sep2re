@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<?import javafx.scene.control.Label?>
+<VBox prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ManageCarsViewController">
+   <children>
+      <HBox prefHeight="44.0" prefWidth="580.0" spacing="10.0">
+         <children>
+            <TextField fx:id="modelField" promptText="Car Model" />
+            <TextField fx:id="yearField" promptText="Year" />
+            <TextField fx:id="priceField" promptText="Rental Price" />
+            <Button mnemonicParsing="false" onAction="#addCarButton" text="Add Car" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </VBox.margin>
+      </HBox>
+      <TableView fx:id="carsTable" prefHeight="200.0" prefWidth="200.0">
+         <columns>
+            <TableColumn fx:id="carIdColumn" text="Car ID" />
+            <TableColumn fx:id="modelColumn" text="Model" />
+            <TableColumn fx:id="yearColumn" text="Year" />
+            <TableColumn fx:id="rentalPriceColumn" text="Rental Price" />
+            <TableColumn fx:id="availabilityColumn" text="Availability" />
+         </columns>
+      </TableView>
+      <Label fx:id="errorLabel" text="" textFill="#eb0000" />
+      <Label fx:id="successLabel" text="" textFill="#00eb2c"/>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#deleteCarButton" text="Delete Car">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>

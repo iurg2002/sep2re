@@ -65,4 +65,9 @@ public class LoginViewModel
             return false;
         }
     }
+
+    public boolean isAdmin()
+    {
+        return model.isAdmin();
+    }
 }

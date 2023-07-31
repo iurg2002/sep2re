@@ -3,7 +3,6 @@ package model;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-// Reservation.java - Model Class for representing Reservation data
 public class Reservation implements Serializable
 {
     private int reservationId;
@@ -83,8 +82,6 @@ public class Reservation implements Serializable
         this.status = status;
     }
 
-    // Constructors, getters, setters, and other methods
-    // ...
 
     @Override
     public String toString() {

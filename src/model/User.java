@@ -2,7 +2,6 @@ package model;
 
 import java.io.Serializable;
 
-// User.java - Model Class for representing User data
 public class User implements Serializable
 {
     private int userId;

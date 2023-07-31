@@ -56,6 +56,9 @@ public class LoginViewController
             boolean login = viewModel.login(usernameField.getText(), passwordField.getText());
             if (login)
             {
+                if(viewModel.isAdmin())
+                    viewHandler.openView("managecars");
+                else
                 viewHandler.openView("cars");
             }
         }

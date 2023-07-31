@@ -30,5 +30,9 @@ public interface UserModel extends Remote{
     void cancelReservation(Reservation reservation)throws RemoteException, SQLException;
 
     Reservation getReservationByUser(User currentUser)throws RemoteException, SQLException;
+
+    void addCar(String model, int year, double price) throws RemoteException, SQLException;
+
+    void deleteCar(int carId) throws RemoteException, SQLException;
 }
 

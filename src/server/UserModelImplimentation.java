@@ -126,4 +126,16 @@ public class UserModelImplimentation implements UserModel
         }
 
     }
+
+    @Override
+    public void addCar(String model, int year, double price) throws RemoteException, SQLException
+    {
+        carDAO.create(model, year, price, true);
+    }
+
+    @Override
+    public void deleteCar(int carId) throws SQLException
+    {
+        carDAO.delete(carDAO.readById(carId));
+    }
 }

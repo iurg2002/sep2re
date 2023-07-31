@@ -21,4 +21,10 @@ public interface Model
     void cancelReservation(Reservation reservation)throws SQLException, IOException;
 
     Reservation getReservation()throws SQLException, IOException;
+
+    boolean isAdmin();
+
+    public void addCar(String model, int year, double price) throws SQLException, IOException;
+
+    void deleteCar(int carId) throws SQLException, IOException;
 }

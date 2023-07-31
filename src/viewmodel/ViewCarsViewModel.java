@@ -1,5 +1,6 @@
 package viewmodel;
 
+import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
@@ -26,18 +27,13 @@ public class ViewCarsViewModel
         this.error = new SimpleStringProperty();
     }
 
-    public Reservation reserveCar(int carId, LocalDate startDate, LocalDate endDate, int status) throws IOException, SQLException
+    public void reserveCar(int carId, LocalDate startDate, LocalDate endDate, int status) throws IOException, SQLException
     {
-        try
-        {
-            Reservation reservation =  model.reserveCar(carId, startDate, endDate, status);
-            return reservation;
-        } catch (SQLException e)
-        {
-            error.set(e.getMessage());
-        }
-        return null;
-
+            try {
+                Reservation reservation = model.reserveCar(carId, startDate, endDate, status);
+            } catch (SQLException | IOException e) {
+                error.setValue(e.getMessage());
+            }
     }
 
     public void clearError()

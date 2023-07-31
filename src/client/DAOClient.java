@@ -6,6 +6,7 @@ import model.Reservation;
 import model.User;
 
 import java.io.IOException;
+import java.rmi.RemoteException;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
@@ -26,4 +27,8 @@ public interface DAOClient
     void cancelReservation(Reservation reservation)throws IOException, SQLException;
 
     Reservation getReservationByUser(User currentUser)throws IOException, SQLException;
+
+    void addCar(String model, int year, double price) throws SQLException, RemoteException;
+
+    void deleteCar(int carId)throws SQLException, RemoteException;
 }

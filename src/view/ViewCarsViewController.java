@@ -83,8 +83,16 @@ public class ViewCarsViewController {
                   System.out.println("No car selected.");
                   errorLabel.setText("No car selected.");
               } else {
-                  reservation = viewModel.reserveCar( selectedCar.getCarId(), selectedStartDate, selectedEndDate, 1);
-                  if(reservation != null)  viewHandler.openView("reservation");
+                  try
+                  {
+                      viewModel.reserveCar( selectedCar.getCarId(), selectedStartDate, selectedEndDate, 1);
+                      viewHandler.openView("reservation");
+                  }
+                  catch (Exception e)
+                  {
+                      System.out.println(e.getMessage());
+                      errorLabel.setText(e.getMessage());
+                  }
               }
         }
     }

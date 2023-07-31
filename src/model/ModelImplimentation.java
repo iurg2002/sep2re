@@ -82,4 +82,22 @@ public class ModelImplimentation implements Model
     {
         return client.getReservationByUser(currentUser);
     }
+
+    @Override
+    public boolean isAdmin()
+    {
+        return currentUser.getRole() == 2;
+    }
+
+    @Override
+    public void addCar(String model, int year, double price) throws SQLException, IOException
+    {
+        client.addCar(model, year, price);
+    }
+
+    @Override
+    public void deleteCar(int carId) throws SQLException, RemoteException
+    {
+        client.deleteCar(carId);
+    }
 }

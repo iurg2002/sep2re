@@ -67,16 +67,14 @@ public class EditReservationViewModel
 
     public void reset() throws SQLException, IOException
     {
-        // You can use the reservation object to set the initial values for startDate and endDate.
-        // For example:
+
         startDate.set(getReservation().getStartDate());
         endDate.set(getReservation().getEndDate());
     }
 
     public void saveReservation(Reservation reservation, LocalDate startDate, LocalDate endDate)
     {
-        // You can use the model to save the reservation.
-        // For example:
+
         try
         {
             model.editReservation(reservation, startDate, endDate);
@@ -89,8 +87,7 @@ public class EditReservationViewModel
 
     public void cancelReservation(Reservation reservation)
     {
-        // You can use the model to cancel the reservation.
-        // For example:
+
         try
         {
             model.cancelReservation(reservation);

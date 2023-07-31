@@ -12,6 +12,7 @@ public class ViewModelFactory
     private LoginViewModel loginViewModel;
     private RegisterViewModel registerViewModel;
     private EditReservationViewModel editReservationViewModel;
+    private ManageCarsViewModel manageCarsViewModel;
 
     public ViewModelFactory(Model model) throws IOException, SQLException
     {
@@ -20,6 +21,7 @@ public class ViewModelFactory
         loginViewModel = new LoginViewModel(model);
         registerViewModel = new RegisterViewModel(model);
         editReservationViewModel = new EditReservationViewModel(model);
+        manageCarsViewModel = new ManageCarsViewModel(model);
     }
 
     public EditReservationViewModel getEditReservationViewModel()
@@ -47,5 +49,8 @@ public class ViewModelFactory
         return registerViewModel;
     }
 
-
+    public ManageCarsViewModel getManageCarsViewModel()
+    {
+        return manageCarsViewModel;
+    }
 }

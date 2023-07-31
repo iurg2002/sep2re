@@ -78,4 +78,16 @@ public class DAOClientImplimentation implements DAOClient
     {
         return model.getReservationByUser(currentUser);
     }
+
+    @Override
+    public void addCar(String carModel, int year, double price) throws SQLException, RemoteException
+    {
+        model.addCar(carModel, year, price);
+    }
+
+    @Override
+    public void deleteCar(int carId) throws SQLException, RemoteException
+    {
+        model.deleteCar(carId);
+    }
 }

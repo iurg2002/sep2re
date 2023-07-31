@@ -5,7 +5,6 @@ import javafx.beans.value.ObservableValue;
 
 import java.io.Serializable;
 
-// Car.java - Model Class for representing Car data
 public class Car implements Serializable
 {
     private int carId;
